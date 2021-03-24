@@ -1,0 +1,43 @@
+# Project: P3Extra_NoelMartinez
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Cancion.o ReproductorMusica.o Genero.o Album.o PlayList.o
+LINKOBJ  = main.o Cancion.o ReproductorMusica.o Genero.o Album.o PlayList.o
+LIBS     = -L"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = P3Extra_NoelMartinez.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = D:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Cancion.o: Cancion.cpp
+	$(CPP) -c Cancion.cpp -o Cancion.o $(CXXFLAGS)
+
+ReproductorMusica.o: ReproductorMusica.cpp
+	$(CPP) -c ReproductorMusica.cpp -o ReproductorMusica.o $(CXXFLAGS)
+
+Genero.o: Genero.cpp
+	$(CPP) -c Genero.cpp -o Genero.o $(CXXFLAGS)
+
+Album.o: Album.cpp
+	$(CPP) -c Album.cpp -o Album.o $(CXXFLAGS)
+
+PlayList.o: PlayList.cpp
+	$(CPP) -c PlayList.cpp -o PlayList.o $(CXXFLAGS)

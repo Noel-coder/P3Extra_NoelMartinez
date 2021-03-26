@@ -8,13 +8,18 @@ class Genero
 	public:
 		Genero();
 		~Genero();
+		Genero(int,string);
+		Genero(string);
+		Genero(int);
 		void guardarGenero(ofstream*);
 		Genero* cargarGenero(ifstream*);
 		int getIdGenero();
 		void setIdGenero(int);
+		string getNombreGenero();
+		void setNombreGenero(string);
 	private:
 		int idGenero;
-		string nombre;
+		string nombreGenero;
 		
 };
 

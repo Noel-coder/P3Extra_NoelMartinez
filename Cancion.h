@@ -10,19 +10,25 @@ class Cancion
 	public:
 		Cancion();
 		~Cancion();
+		Cancion(int,string,string,Genero*,string);
+		Cancion(int);
+		Cancion(string);
 		void guardarCancion(ofstream*);
 		Cancion* cargarUsuario(ifstream*,vector<Genero*>);
 		int getIdCancion();
 		void setIdCancion(int);
-		string getNombre();
-		void setNombre(string);
+		string getNombreCancion();
+		void setNombreCancion(string);
+		string getArtista();
+		void setArtista(string);
 		Genero* getGenero();
 		void setGenero(Genero*);
 		string getDuracion();
 		void setDuracion(string);
 	private:
 		int idCancion;
-		string nombre;
+		string nombreCancion;
+		string artista;
 		Genero* genero;
 		string duracion;
 };

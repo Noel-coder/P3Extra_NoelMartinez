@@ -20,6 +20,7 @@ class ReproductorMusica {
 		void agregarGenero(Genero*);
 		void agregarCancion(Cancion*);
 		void agregarPlaylist(PlayList*);
+		void agregarAlbumes(Album*);
 		void modificarGenero(int,string);
 		void modificarCancion(int,string,string,string);
 		bool validarAgregado();
@@ -29,10 +30,16 @@ class ReproductorMusica {
 		void listarCancion(int);
 		void listarGenero(int);
 		void listarGeneros();
+		void listarAlbumes();
+		void listarPlaylist();
 		vector<Genero*> getGenero();
 		void setGenero(vector<Genero*>);
 		vector<PlayList*> getPlaylist();
 		void setPlaylist(vector<PlayList*>);
+		vector<Cancion*> getCancion();
+		void setCancion(vector<Cancion*>);
+		vector<Album*>getAlbum();
+		void setAlbum(vector<Album*>);
 		private:
 		vector<Cancion*> canciones;
 		vector<Genero*> generos;

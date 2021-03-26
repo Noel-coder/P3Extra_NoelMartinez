@@ -18,6 +18,21 @@ vector<PlayList*> ReproductorMusica::getPlaylist(){
 	return this->playlists;
 }
 
+vector<Cancion*> ReproductorMusica::getCancion(){
+	return this->canciones;
+}
+void ReproductorMusica::setCancion(vector<Cancion*> _canciones){
+	this->canciones=_canciones;
+}
+
+vector<Album*> ReproductorMusica::getAlbum(){
+	return this->albumes;
+}
+
+void ReproductorMusica::setAlbum(vector<Album*> _albumes){
+	this->albumes=_albumes;
+}
+
 void ReproductorMusica::agregarGenero(Genero* g) {
 	this->generos.push_back(g);
 }
@@ -27,6 +42,10 @@ void ReproductorMusica::agregarCancion(Cancion* c) {
 }
 void ReproductorMusica::agregarPlaylist(PlayList* p){
 	this->playlists.push_back(p);
+}
+
+void ReproductorMusica::agregarAlbumes(Album* a){
+	this->albumes.push_back(a);
 }
 
 bool ReproductorMusica::validarAgregado() {
@@ -55,6 +74,7 @@ void ReproductorMusica::listarCancion(int pos) {
 		}
 	}
 }
+
 
 void ReproductorMusica::modificarGenero(int posicion, string nombre) {
 	for(int i = 0; i < generos.size(); i++) {
@@ -110,5 +130,22 @@ void ReproductorMusica::listarGeneros() {
 		cout << "------"<< "Genero #"<< i << "------" << endl;
 		cout << "Nombre del Genero: "<<genero->getNombreGenero()<<endl;
 		cout << endl;
+	}
+}
+
+void ReproductorMusica::listarAlbumes(){
+	for(int i = 0; i < albumes.size();i++){
+		Album* album = albumes[i];
+		cout << "------"<< "Album #"<<i<<"------"<<endl;
+		cout<<"Nombre del Album: "<<album->getNombre()<<endl;
+	}
+}
+
+void ReproductorMusica::listarPlaylist(){
+	for(int i = 0; i < playlists.size();i++){	
+		PlayList* playlist = playlists[i];
+		cout << "------"<<"Playlist #"<<i<<"------"<<endl;
+		cout << "Nombre de la Playlist: "<<playlist->getNombre()<<endl;
+		playlist->agregarPlaylist();
 	}
 }
